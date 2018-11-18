@@ -1,0 +1,2349 @@
+[
+  {
+    "sha": "cea5ecef79c843db7b4f03a0b1ac07f69933477c",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6Y2VhNWVjZWY3OWM4NDNkYjdiNGYwM2EwYjFhYzA3ZjY5OTMzNDc3Yw==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2017-06-23T18:00:33Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2017-06-23T18:00:33Z"
+      },
+      "message": "Update with information about current project status.",
+      "tree": {
+        "sha": "b4b109bc16a752b0482f381f187bb42ba264b833",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/b4b109bc16a752b0482f381f187bb42ba264b833"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/cea5ecef79c843db7b4f03a0b1ac07f69933477c",
+      "comment_count": 8,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/cea5ecef79c843db7b4f03a0b1ac07f69933477c",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/cea5ecef79c843db7b4f03a0b1ac07f69933477c",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/cea5ecef79c843db7b4f03a0b1ac07f69933477c/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "2e72465cdbed286a96cff8e598b3b80a78056822",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/2e72465cdbed286a96cff8e598b3b80a78056822",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/2e72465cdbed286a96cff8e598b3b80a78056822"
+      }
+    ]
+  },
+  {
+    "sha": "2e72465cdbed286a96cff8e598b3b80a78056822",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MmU3MjQ2NWNkYmVkMjg2YTk2Y2ZmOGU1OThiM2I4MGE3ODA1NjgyMg==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2017-06-08T22:22:10Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2017-06-08T22:22:10Z"
+      },
+      "message": "Improve testing for CompressionInfo.db files.\n\n - When testing for a CompressionInfo.db file adjacent to the Data.db\n   sstable, if the file cannot be found test the path to see if it\n   looks like it contains a date time.  When it does contain a date\n   time check the adjacent minutes around the Data.db file to see if\n   they contain the CompressionInfo.db file.\n\n   This is condition exists because sometimes Priam uploads the \n   Data.db and CompressionInfo.db files in separate minutes.",
+      "tree": {
+        "sha": "5ea922abb782f51df6164ca071aa8c1fc9a0fb30",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/5ea922abb782f51df6164ca071aa8c1fc9a0fb30"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/2e72465cdbed286a96cff8e598b3b80a78056822",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/2e72465cdbed286a96cff8e598b3b80a78056822",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/2e72465cdbed286a96cff8e598b3b80a78056822",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/2e72465cdbed286a96cff8e598b3b80a78056822/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "debc24f929236319ae3d93922b64ec55e8b05474",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/debc24f929236319ae3d93922b64ec55e8b05474",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/debc24f929236319ae3d93922b64ec55e8b05474"
+      }
+    ]
+  },
+  {
+    "sha": "debc24f929236319ae3d93922b64ec55e8b05474",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZGViYzI0ZjkyOTIzNjMxOWFlM2Q5MzkyMmI2NGVjNTVlOGIwNTQ3NA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2017-05-18T21:51:43Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2017-05-18T21:51:43Z"
+      },
+      "message": "Issue #56: Fixes an OOM error processing large compressed column families. (#57)\n\n- Switch to using try with resources to close streams.\r\n - additionally don't store data in memory that we are not using (when only calculating the end of the stream).",
+      "tree": {
+        "sha": "480b89f17b017fa2c8776075cdeb6e2641200a9e",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/480b89f17b017fa2c8776075cdeb6e2641200a9e"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/debc24f929236319ae3d93922b64ec55e8b05474",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/debc24f929236319ae3d93922b64ec55e8b05474",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/debc24f929236319ae3d93922b64ec55e8b05474",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/debc24f929236319ae3d93922b64ec55e8b05474/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/d3fc8d632ce3ca465df1b7f9df00726f9b31e065"
+      }
+    ]
+  },
+  {
+    "sha": "d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZDNmYzhkNjMyY2UzY2E0NjVkZjFiN2Y5ZGYwMDcyNmY5YjMxZTA2NQ==",
+    "commit": {
+      "author": {
+        "name": "roblovelock",
+        "email": "roblovelock@gmail.com",
+        "date": "2016-12-07T18:15:22Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2016-12-07T18:15:22Z"
+      },
+      "message": "Ensure checksum is fully read until EOF. (#55)",
+      "tree": {
+        "sha": "daea44377dbf5f155ad2343f06a88f4c2af5cc90",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/daea44377dbf5f155ad2343f06a88f4c2af5cc90"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/d3fc8d632ce3ca465df1b7f9df00726f9b31e065",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/d3fc8d632ce3ca465df1b7f9df00726f9b31e065/comments",
+    "author": {
+      "login": "roblovelock",
+      "id": 754616,
+      "node_id": "MDQ6VXNlcjc1NDYxNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/754616?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/roblovelock",
+      "html_url": "https://github.com/roblovelock",
+      "followers_url": "https://api.github.com/users/roblovelock/followers",
+      "following_url": "https://api.github.com/users/roblovelock/following{/other_user}",
+      "gists_url": "https://api.github.com/users/roblovelock/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/roblovelock/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/roblovelock/subscriptions",
+      "organizations_url": "https://api.github.com/users/roblovelock/orgs",
+      "repos_url": "https://api.github.com/users/roblovelock/repos",
+      "events_url": "https://api.github.com/users/roblovelock/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/roblovelock/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a41576bbbfe7845ddc09bf8af9c80500738d3432",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/a41576bbbfe7845ddc09bf8af9c80500738d3432",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/a41576bbbfe7845ddc09bf8af9c80500738d3432"
+      }
+    ]
+  },
+  {
+    "sha": "a41576bbbfe7845ddc09bf8af9c80500738d3432",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6YTQxNTc2YmJiZmU3ODQ1ZGRjMDliZjhhZjljODA1MDA3MzhkMzQzMg==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-22T00:04:01Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-22T00:04:01Z"
+      },
+      "message": "Fixed combining splits for compressed column families.",
+      "tree": {
+        "sha": "20cfdd7ad5f1d4798f51474c00b024498ca5d590",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/20cfdd7ad5f1d4798f51474c00b024498ca5d590"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/a41576bbbfe7845ddc09bf8af9c80500738d3432",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/a41576bbbfe7845ddc09bf8af9c80500738d3432",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/a41576bbbfe7845ddc09bf8af9c80500738d3432",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/a41576bbbfe7845ddc09bf8af9c80500738d3432/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f33ca1999a72c2bc1c9d69be050238c1f761288d",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/f33ca1999a72c2bc1c9d69be050238c1f761288d",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/f33ca1999a72c2bc1c9d69be050238c1f761288d"
+      }
+    ]
+  },
+  {
+    "sha": "f33ca1999a72c2bc1c9d69be050238c1f761288d",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZjMzY2ExOTk5YTcyYzJiYzFjOWQ2OWJlMDUwMjM4YzFmNzYxMjg4ZA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-20T20:31:12Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-20T20:31:12Z"
+      },
+      "message": "Use -combineSplits to combine input splits.\n\n - This feature already existed in older versions of Aegisthus.  This is\n   especially useful for reducing the number of mappers when processing\n   incremental changes.\n\n   Most code for AegisthusCombinedInputFormat, CombineSSTableReader,\nand AegCombinedSplit were resurrected from the code that existed in\n4cc53ef653dc3c0a367c349901ae8cc31fce02de.",
+      "tree": {
+        "sha": "9cf58ca16873aa01f927b7dc9934fb8008b309d3",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/9cf58ca16873aa01f927b7dc9934fb8008b309d3"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/f33ca1999a72c2bc1c9d69be050238c1f761288d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/f33ca1999a72c2bc1c9d69be050238c1f761288d",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/f33ca1999a72c2bc1c9d69be050238c1f761288d",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/f33ca1999a72c2bc1c9d69be050238c1f761288d/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/e7747c05d5a0ee998511f75c61a5907ebc8a3dea"
+      }
+    ]
+  },
+  {
+    "sha": "e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZTc3NDdjMDVkNWEwZWU5OTg1MTFmNzVjNjFhNTkwN2ViYzhhM2RlYQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-08T23:03:48Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-07-08T23:03:48Z"
+      },
+      "message": "Upgrade Gradle and Nebula plugins.",
+      "tree": {
+        "sha": "9c026215fd45bd391087660b0c8bc67604424dc9",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/9c026215fd45bd391087660b0c8bc67604424dc9"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/e7747c05d5a0ee998511f75c61a5907ebc8a3dea",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/e7747c05d5a0ee998511f75c61a5907ebc8a3dea/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "11d20edcdbbc03da6e40593638e03eb369a59fd4",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/11d20edcdbbc03da6e40593638e03eb369a59fd4",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/11d20edcdbbc03da6e40593638e03eb369a59fd4"
+      }
+    ]
+  },
+  {
+    "sha": "11d20edcdbbc03da6e40593638e03eb369a59fd4",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MTFkMjBlZGNkYmJjMDNkYTZlNDA1OTM2MzhlMDNlYjM2OWE1OWZkNA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-02-03T00:17:52Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-02-03T00:17:52Z"
+      },
+      "message": "Added an option to trace data from the source.\n\n - When the hadoop config “aegisthus.trace_source” is true,\n   Aegisthus will keep track of which source sstable all data was\n   loaded from.  NOTE: Currently this data can only be output in\n   the JSON output format.  This is not the normal Aegisthus output\n   and is only useful for debugging.",
+      "tree": {
+        "sha": "c62c557c81294eee3badea914e8d82176250009a",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/c62c557c81294eee3badea914e8d82176250009a"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/11d20edcdbbc03da6e40593638e03eb369a59fd4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/11d20edcdbbc03da6e40593638e03eb369a59fd4",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/11d20edcdbbc03da6e40593638e03eb369a59fd4",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/11d20edcdbbc03da6e40593638e03eb369a59fd4/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3305276264abfe5ecddb4f46c7a7a6940dc41093",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/3305276264abfe5ecddb4f46c7a7a6940dc41093",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/3305276264abfe5ecddb4f46c7a7a6940dc41093"
+      }
+    ]
+  },
+  {
+    "sha": "3305276264abfe5ecddb4f46c7a7a6940dc41093",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MzMwNTI3NjI2NGFiZmU1ZWNkZGI0ZjQ2YzdhN2E2OTQwZGM0MTA5Mw==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2016-01-06T00:51:43Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2016-01-06T00:51:43Z"
+      },
+      "message": "Updated README.\n\nAdded a section to document how to test Aegisthus and another section with ideas for future enhancements.",
+      "tree": {
+        "sha": "977421a878afa24a9d1e37f7e5989f3634d44d26",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/977421a878afa24a9d1e37f7e5989f3634d44d26"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/3305276264abfe5ecddb4f46c7a7a6940dc41093",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/3305276264abfe5ecddb4f46c7a7a6940dc41093",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/3305276264abfe5ecddb4f46c7a7a6940dc41093",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/3305276264abfe5ecddb4f46c7a7a6940dc41093/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1343de5b389c5a846d8509102078e3ca0680bedf",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/1343de5b389c5a846d8509102078e3ca0680bedf",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/1343de5b389c5a846d8509102078e3ca0680bedf"
+      }
+    ]
+  },
+  {
+    "sha": "1343de5b389c5a846d8509102078e3ca0680bedf",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MTM0M2RlNWIzODljNWE4NDZkODUwOTEwMjA3OGUzY2EwNjgwYmVkZg==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-05T23:20:07Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-05T23:27:47Z"
+      },
+      "message": "Work around to process C* 2.1 and 2.2 data\n\n - This is a temporary patch.  The long term solution\n   is to upgrade Aegisthus to use the Cassandra\n   2.2 libraries.",
+      "tree": {
+        "sha": "4bbba622c35f1abe4d7eae661ba8643c6a71e287",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/4bbba622c35f1abe4d7eae661ba8643c6a71e287"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/1343de5b389c5a846d8509102078e3ca0680bedf",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/1343de5b389c5a846d8509102078e3ca0680bedf",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/1343de5b389c5a846d8509102078e3ca0680bedf",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/1343de5b389c5a846d8509102078e3ca0680bedf/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/13e7361e64a1050fcb3f1e7d2d22513a3c482d59"
+      }
+    ]
+  },
+  {
+    "sha": "13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MTNlNzM2MWU2NGExMDUwZmNiM2YxZTdkMmQyMjUxM2EzYzQ4MmQ1OQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-05T23:15:18Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-05T23:27:47Z"
+      },
+      "message": "Allow tests to ignore timestamps when comparing output.",
+      "tree": {
+        "sha": "2ed31b499f3675c5dba7c02736b37432d87191bc",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/2ed31b499f3675c5dba7c02736b37432d87191bc"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/13e7361e64a1050fcb3f1e7d2d22513a3c482d59",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/13e7361e64a1050fcb3f1e7d2d22513a3c482d59/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "10dbb7ed0d883e660c4786847bfedf1b902e4493",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/10dbb7ed0d883e660c4786847bfedf1b902e4493",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/10dbb7ed0d883e660c4786847bfedf1b902e4493"
+      }
+    ]
+  },
+  {
+    "sha": "10dbb7ed0d883e660c4786847bfedf1b902e4493",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MTBkYmI3ZWQwZDg4M2U2NjBjNDc4Njg0N2JmZWRmMWI5MDJlNDQ5Mw==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-04T20:11:41Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2016-01-05T23:27:47Z"
+      },
+      "message": "Testing updates.\n\n - Migrated tests from Test-NG to jUnit\n - Moved aegisthus-test into aegisthus-hadoop.",
+      "tree": {
+        "sha": "19a017e8abc8ec60f1775b917a2672e226d4b8a4",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/19a017e8abc8ec60f1775b917a2672e226d4b8a4"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/10dbb7ed0d883e660c4786847bfedf1b902e4493",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/10dbb7ed0d883e660c4786847bfedf1b902e4493",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/10dbb7ed0d883e660c4786847bfedf1b902e4493",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/10dbb7ed0d883e660c4786847bfedf1b902e4493/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "342f76b1cf568ca391b2359dea2d4bbf21293235",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/342f76b1cf568ca391b2359dea2d4bbf21293235",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/342f76b1cf568ca391b2359dea2d4bbf21293235"
+      }
+    ]
+  },
+  {
+    "sha": "342f76b1cf568ca391b2359dea2d4bbf21293235",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MzQyZjc2YjFjZjU2OGNhMzkxYjIzNTlkZWEyZDRiYmYyMTI5MzIzNQ==",
+    "commit": {
+      "author": {
+        "name": "Andrew Spyker",
+        "email": "aspyker@netflix.com",
+        "date": "2015-12-11T23:51:58Z"
+      },
+      "committer": {
+        "name": "Andrew Spyker",
+        "email": "aspyker@netflix.com",
+        "date": "2015-12-11T23:51:58Z"
+      },
+      "message": "adding OSSMETADATA for NetflixOSS tracking",
+      "tree": {
+        "sha": "f2fc46c6649a5654a9ea8ddd22d196e283befc9d",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/f2fc46c6649a5654a9ea8ddd22d196e283befc9d"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/342f76b1cf568ca391b2359dea2d4bbf21293235",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/342f76b1cf568ca391b2359dea2d4bbf21293235",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/342f76b1cf568ca391b2359dea2d4bbf21293235",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/342f76b1cf568ca391b2359dea2d4bbf21293235/comments",
+    "author": {
+      "login": "aspyker",
+      "id": 260750,
+      "node_id": "MDQ6VXNlcjI2MDc1MA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/260750?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aspyker",
+      "html_url": "https://github.com/aspyker",
+      "followers_url": "https://api.github.com/users/aspyker/followers",
+      "following_url": "https://api.github.com/users/aspyker/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aspyker/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aspyker/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aspyker/subscriptions",
+      "organizations_url": "https://api.github.com/users/aspyker/orgs",
+      "repos_url": "https://api.github.com/users/aspyker/repos",
+      "events_url": "https://api.github.com/users/aspyker/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aspyker/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "aspyker",
+      "id": 260750,
+      "node_id": "MDQ6VXNlcjI2MDc1MA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/260750?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aspyker",
+      "html_url": "https://github.com/aspyker",
+      "followers_url": "https://api.github.com/users/aspyker/followers",
+      "following_url": "https://api.github.com/users/aspyker/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aspyker/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aspyker/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aspyker/subscriptions",
+      "organizations_url": "https://api.github.com/users/aspyker/orgs",
+      "repos_url": "https://api.github.com/users/aspyker/repos",
+      "events_url": "https://api.github.com/users/aspyker/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aspyker/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "319b913e201432f86b850cf95af03ab46640665e",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/319b913e201432f86b850cf95af03ab46640665e",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/319b913e201432f86b850cf95af03ab46640665e"
+      }
+    ]
+  },
+  {
+    "sha": "319b913e201432f86b850cf95af03ab46640665e",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MzE5YjkxM2UyMDE0MzJmODZiODUwY2Y5NWFmMDNhYjQ2NjQwNjY1ZQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:40:10Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:40:10Z"
+      },
+      "message": "Fix getDataFiles removing FS schema and bucket.\n\n - pathsString only worked on the path and dropped the schema and\n   bucket so this is reworked so that you can use s3 for your input\n   directory instead of hdfs if you want to (mainly useful for testing).",
+      "tree": {
+        "sha": "1fbf0fb7a6f5701600d0ada2a367e9fd77396f4f",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/1fbf0fb7a6f5701600d0ada2a367e9fd77396f4f"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/319b913e201432f86b850cf95af03ab46640665e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/319b913e201432f86b850cf95af03ab46640665e",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/319b913e201432f86b850cf95af03ab46640665e",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/319b913e201432f86b850cf95af03ab46640665e/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/6133531af17364d2f78ad0b0f22c5f45c415fb1a"
+      }
+    ]
+  },
+  {
+    "sha": "6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NjEzMzUzMWFmMTczNjRkMmY3OGFkMGIwZjIyYzVmNDVjNDE1ZmIxYQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:35:07Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:35:07Z"
+      },
+      "message": "Calculate split sizes in parallel.\n\n - Previously splits were calculated sequentially.  Doing this in \n   parallel provides a substantial performance improvement for jobs\n   that are reading many data files.",
+      "tree": {
+        "sha": "321710effddaa665a4b4bb616a70eebf3f164cda",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/321710effddaa665a4b4bb616a70eebf3f164cda"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/6133531af17364d2f78ad0b0f22c5f45c415fb1a",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/6133531af17364d2f78ad0b0f22c5f45c415fb1a/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d18309320df1e6eda44d085ee0ed5673a90ac895",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/d18309320df1e6eda44d085ee0ed5673a90ac895",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/d18309320df1e6eda44d085ee0ed5673a90ac895"
+      }
+    ]
+  },
+  {
+    "sha": "d18309320df1e6eda44d085ee0ed5673a90ac895",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZDE4MzA5MzIwZGYxZTZlZGE0NGQwODVlZTBlZDU2NzNhOTBhYzg5NQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:28:48Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:28:48Z"
+      },
+      "message": "Moving log statement to debug level.",
+      "tree": {
+        "sha": "e03245167d0d5cd666243ba72bacf7cdb38dc70d",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/e03245167d0d5cd666243ba72bacf7cdb38dc70d"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/d18309320df1e6eda44d085ee0ed5673a90ac895",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/d18309320df1e6eda44d085ee0ed5673a90ac895",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/d18309320df1e6eda44d085ee0ed5673a90ac895",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/d18309320df1e6eda44d085ee0ed5673a90ac895/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5453c45ce26217d46427d4e3d755dc4e4f648975",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/5453c45ce26217d46427d4e3d755dc4e4f648975",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/5453c45ce26217d46427d4e3d755dc4e4f648975"
+      }
+    ]
+  },
+  {
+    "sha": "5453c45ce26217d46427d4e3d755dc4e4f648975",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NTQ1M2M0NWNlMjYyMTdkNDY0MjdkNGUzZDc1NWRjNGU0ZjY0ODk3NQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:27:36Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-10-28T17:27:36Z"
+      },
+      "message": "Index was off by one when there is deleted data.\n\n - Additionally broke out and added comments to make it easier to\n   follow while I was tracking down the issue.",
+      "tree": {
+        "sha": "0b1e2a4ff552701dd41c784f3ab1c194ea1132c8",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/0b1e2a4ff552701dd41c784f3ab1c194ea1132c8"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/5453c45ce26217d46427d4e3d755dc4e4f648975",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/5453c45ce26217d46427d4e3d755dc4e4f648975",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/5453c45ce26217d46427d4e3d755dc4e4f648975",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/5453c45ce26217d46427d4e3d755dc4e4f648975/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "eb3384df23f7700fcf9f4311078861872b2ad6d5",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/eb3384df23f7700fcf9f4311078861872b2ad6d5",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/eb3384df23f7700fcf9f4311078861872b2ad6d5"
+      }
+    ]
+  },
+  {
+    "sha": "eb3384df23f7700fcf9f4311078861872b2ad6d5",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZWIzMzg0ZGYyM2Y3NzAwZmNmOWY0MzExMDc4ODYxODcyYjJhZDZkNQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-09-24T17:59:28Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-09-24T17:59:28Z"
+      },
+      "message": "Kill the hadoop job if Aegisthus is interrupted.\n\n - This is enabled by default but can be disabled with\n   -Daegisthus.shutdown_hook=false",
+      "tree": {
+        "sha": "95764d13ec35854075c6c504d6daa9f99e965107",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/95764d13ec35854075c6c504d6daa9f99e965107"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/eb3384df23f7700fcf9f4311078861872b2ad6d5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/eb3384df23f7700fcf9f4311078861872b2ad6d5",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/eb3384df23f7700fcf9f4311078861872b2ad6d5",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/eb3384df23f7700fcf9f4311078861872b2ad6d5/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/f73d9adadba985591ac9c9aa59e6305d8e2f71c7"
+      }
+    ]
+  },
+  {
+    "sha": "f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZjczZDlhZGFkYmE5ODU1OTFhYzljOWFhNTllNjMwNWQ4ZTJmNzFjNw==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-09-22T20:19:29Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-09-22T20:19:29Z"
+      },
+      "message": "Merge pull request #45 from coursera/dan-opt-key-2\n\nUse raw comparator",
+      "tree": {
+        "sha": "786c48c2a6a8538028ac60089f035a50e720d347",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/786c48c2a6a8538028ac60089f035a50e720d347"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/f73d9adadba985591ac9c9aa59e6305d8e2f71c7",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/f73d9adadba985591ac9c9aa59e6305d8e2f71c7/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6786d02af8537d91b227aebf599c5328efe32e58",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/6786d02af8537d91b227aebf599c5328efe32e58",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/6786d02af8537d91b227aebf599c5328efe32e58"
+      },
+      {
+        "sha": "7b7ac3d375a111c4d65c597d76f803cb195978c8",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/7b7ac3d375a111c4d65c597d76f803cb195978c8",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/7b7ac3d375a111c4d65c597d76f803cb195978c8"
+      }
+    ]
+  },
+  {
+    "sha": "6786d02af8537d91b227aebf599c5328efe32e58",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6Njc4NmQwMmFmODUzN2Q5MWIyMjdhZWJmNTk5YzUzMjhlZmUzMmU1OA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-09-22T20:19:08Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-09-22T20:19:08Z"
+      },
+      "message": "Merge pull request #43 from rspieldenner/netflixoss\n\nNetflixoss",
+      "tree": {
+        "sha": "d88d8a45318094f15065018c3f6d302ea29791ab",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/d88d8a45318094f15065018c3f6d302ea29791ab"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/6786d02af8537d91b227aebf599c5328efe32e58",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/6786d02af8537d91b227aebf599c5328efe32e58",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/6786d02af8537d91b227aebf599c5328efe32e58",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/6786d02af8537d91b227aebf599c5328efe32e58/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/76c532bec50c49a25b1063188f1b4742ada7a4ed"
+      },
+      {
+        "sha": "4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/4000f181a9adcb26bfa89ede6de7f2f971d6db37"
+      }
+    ]
+  },
+  {
+    "sha": "7b7ac3d375a111c4d65c597d76f803cb195978c8",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6N2I3YWMzZDM3NWExMTFjNGQ2NWM1OTdkNzZmODAzY2IxOTU5NzhjOA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Chia",
+        "email": "danchia@coursera.org",
+        "date": "2015-07-24T08:48:47Z"
+      },
+      "committer": {
+        "name": "Daniel Chia",
+        "email": "danchia@coursera.org",
+        "date": "2015-07-25T05:59:16Z"
+      },
+      "message": "use raw comparator",
+      "tree": {
+        "sha": "6901de4714664be181724f26ef80b705dafe69fd",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/6901de4714664be181724f26ef80b705dafe69fd"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/7b7ac3d375a111c4d65c597d76f803cb195978c8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/7b7ac3d375a111c4d65c597d76f803cb195978c8",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/7b7ac3d375a111c4d65c597d76f803cb195978c8",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/7b7ac3d375a111c4d65c597d76f803cb195978c8/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/76c532bec50c49a25b1063188f1b4742ada7a4ed"
+      }
+    ]
+  },
+  {
+    "sha": "4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NDAwMGYxODFhOWFkY2IyNmJmYTg5ZWRlNmRlN2YyZjk3MWQ2ZGIzNw==",
+    "commit": {
+      "author": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-13T21:57:41Z"
+      },
+      "committer": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-13T21:57:41Z"
+      },
+      "message": "Remove if blocks which switch between internal and external builds",
+      "tree": {
+        "sha": "d88d8a45318094f15065018c3f6d302ea29791ab",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/d88d8a45318094f15065018c3f6d302ea29791ab"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/4000f181a9adcb26bfa89ede6de7f2f971d6db37",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/4000f181a9adcb26bfa89ede6de7f2f971d6db37/comments",
+    "author": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/4ea93111191cb8084de0eaaa7f44e8a6a243cd90"
+      }
+    ]
+  },
+  {
+    "sha": "4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NGVhOTMxMTExOTFjYjgwODRkZTBlYWFhN2Y0NGU4YTZhMjQzY2Q5MA==",
+    "commit": {
+      "author": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-10T20:28:32Z"
+      },
+      "committer": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-10T20:28:32Z"
+      },
+      "message": "Remove unneeded version field",
+      "tree": {
+        "sha": "a26e5ed7bbd5e5093ae5d314315f37a54f546b05",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/a26e5ed7bbd5e5093ae5d314315f37a54f546b05"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/4ea93111191cb8084de0eaaa7f44e8a6a243cd90",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/4ea93111191cb8084de0eaaa7f44e8a6a243cd90/comments",
+    "author": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "14bc026e660ae58e784b5d85c46705a10e75ce28",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/14bc026e660ae58e784b5d85c46705a10e75ce28",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/14bc026e660ae58e784b5d85c46705a10e75ce28"
+      }
+    ]
+  },
+  {
+    "sha": "14bc026e660ae58e784b5d85c46705a10e75ce28",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MTRiYzAyNmU2NjBhZTU4ZTc4NGI1ZDg1YzQ2NzA1YTEwZTc1Y2UyOA==",
+    "commit": {
+      "author": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-10T20:28:06Z"
+      },
+      "committer": {
+        "name": "Rob Spieldenner",
+        "email": "rob.spieldenner@gmail.com",
+        "date": "2015-04-10T20:28:06Z"
+      },
+      "message": "Switch to updated netflixoss build",
+      "tree": {
+        "sha": "7600e9f754ae8a1378a343c04f428bea4d30ae09",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/7600e9f754ae8a1378a343c04f428bea4d30ae09"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/14bc026e660ae58e784b5d85c46705a10e75ce28",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/14bc026e660ae58e784b5d85c46705a10e75ce28",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/14bc026e660ae58e784b5d85c46705a10e75ce28",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/14bc026e660ae58e784b5d85c46705a10e75ce28/comments",
+    "author": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "rspieldenner",
+      "id": 782102,
+      "node_id": "MDQ6VXNlcjc4MjEwMg==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/782102?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/rspieldenner",
+      "html_url": "https://github.com/rspieldenner",
+      "followers_url": "https://api.github.com/users/rspieldenner/followers",
+      "following_url": "https://api.github.com/users/rspieldenner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/rspieldenner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/rspieldenner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/rspieldenner/subscriptions",
+      "organizations_url": "https://api.github.com/users/rspieldenner/orgs",
+      "repos_url": "https://api.github.com/users/rspieldenner/repos",
+      "events_url": "https://api.github.com/users/rspieldenner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/rspieldenner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/76c532bec50c49a25b1063188f1b4742ada7a4ed"
+      }
+    ]
+  },
+  {
+    "sha": "76c532bec50c49a25b1063188f1b4742ada7a4ed",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NzZjNTMyYmVjNTBjNDlhMjViMTA2MzE4OGYxYjQ3NDJhZGE3YTRlZA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T01:55:08Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T01:55:08Z"
+      },
+      "message": "Fix for shuffling when there are deletes.",
+      "tree": {
+        "sha": "819a34e9c5ad6a209af8f4974c70c80cf19dddcf",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/819a34e9c5ad6a209af8f4974c70c80cf19dddcf"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/76c532bec50c49a25b1063188f1b4742ada7a4ed",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/76c532bec50c49a25b1063188f1b4742ada7a4ed/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1"
+      }
+    ]
+  },
+  {
+    "sha": "1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MWE0ZWMxNGJmYTY2NDZmZDUyNWYwYTk4NWRiODRjN2IyYzk2NDdiMQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T01:01:49Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T01:01:49Z"
+      },
+      "message": "Fix for a shuffle NPE.",
+      "tree": {
+        "sha": "2ff32bf485a19d1c93aac2c80db1318005aabd5e",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/2ff32bf485a19d1c93aac2c80db1318005aabd5e"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/1a4ec14bfa6646fd525f0a985db84c7b2c9647b1/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e0fa6b5872dfd607c6b5116b869915e3836966a5",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/e0fa6b5872dfd607c6b5116b869915e3836966a5",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/e0fa6b5872dfd607c6b5116b869915e3836966a5"
+      }
+    ]
+  },
+  {
+    "sha": "e0fa6b5872dfd607c6b5116b869915e3836966a5",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6ZTBmYTZiNTg3MmRmZDYwN2M2YjUxMTZiODY5OTE1ZTM4MzY5NjZhNQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T00:37:08Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-06T00:37:08Z"
+      },
+      "message": "Fix for an error when processing deleted items.",
+      "tree": {
+        "sha": "ce5a926228eabad61e0eda60ff45b6c49244f0cc",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/ce5a926228eabad61e0eda60ff45b6c49244f0cc"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/e0fa6b5872dfd607c6b5116b869915e3836966a5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/e0fa6b5872dfd607c6b5116b869915e3836966a5",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/e0fa6b5872dfd607c6b5116b869915e3836966a5",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/e0fa6b5872dfd607c6b5116b869915e3836966a5/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "37e304818d6aebaafe9b362b3091264a635b8590",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/37e304818d6aebaafe9b362b3091264a635b8590",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/37e304818d6aebaafe9b362b3091264a635b8590"
+      }
+    ]
+  },
+  {
+    "sha": "37e304818d6aebaafe9b362b3091264a635b8590",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6MzdlMzA0ODE4ZDZhZWJhYWZlOWIzNjJiMzA5MTI2NGE2MzViODU5MA==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-03-02T20:21:38Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dbwatson@vectorspace.org",
+        "date": "2015-03-02T20:21:38Z"
+      },
+      "message": "Merge pull request #39 from danielbwatson/c2_merge\n\nC2 Support",
+      "tree": {
+        "sha": "d7dd4a21c324e11a832002c08a011ccf911ee277",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/d7dd4a21c324e11a832002c08a011ccf911ee277"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/37e304818d6aebaafe9b362b3091264a635b8590",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/37e304818d6aebaafe9b362b3091264a635b8590",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/37e304818d6aebaafe9b362b3091264a635b8590",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/37e304818d6aebaafe9b362b3091264a635b8590/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8447384a309672b0c635f71ac97c1c07208d2d48",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/8447384a309672b0c635f71ac97c1c07208d2d48",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/8447384a309672b0c635f71ac97c1c07208d2d48"
+      },
+      {
+        "sha": "3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/3e545ecb9a4abc589a4f9e7faa2844d740b51d39"
+      }
+    ]
+  },
+  {
+    "sha": "3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6M2U1NDVlY2I5YTRhYmM1ODlhNGY5ZTdmYWEyODQ0ZDc0MGI1MWQzOQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-02T19:06:56Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-02T19:06:56Z"
+      },
+      "message": "Bump version to 0.3.1.",
+      "tree": {
+        "sha": "d7dd4a21c324e11a832002c08a011ccf911ee277",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/d7dd4a21c324e11a832002c08a011ccf911ee277"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/3e545ecb9a4abc589a4f9e7faa2844d740b51d39",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/3e545ecb9a4abc589a4f9e7faa2844d740b51d39/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/4e2ceddf5ae91c62a86636a3fee329f0d008f0da"
+      }
+    ]
+  },
+  {
+    "sha": "4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+    "node_id": "MDY6Q29tbWl0MTM2MDE2MzY6NGUyY2VkZGY1YWU5MWM2MmE4NjYzNmEzZmVlMzI5ZjBkMDA4ZjBkYQ==",
+    "commit": {
+      "author": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-02T19:06:43Z"
+      },
+      "committer": {
+        "name": "Daniel Watson",
+        "email": "dwatson@netflix.com",
+        "date": "2015-03-02T19:06:43Z"
+      },
+      "message": "Allow automatically skipping corrupted files.\n\n - Configured with the property: aegisthus.max_corrupt_files_to_skip\n - Defaults to 0.\n - Removed aegisthus.skip_rows_with_errors\n   Because of the file format it is frequently difficult to tell if a file or a whole row is corrupted, therefore we count any file with errors as corrupted.",
+      "tree": {
+        "sha": "33908a1f4c07a2c447aeed0b1edd6e89359f9948",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/git/trees/33908a1f4c07a2c447aeed0b1edd6e89359f9948"
+      },
+      "url": "https://api.github.com/repos/Netflix/aegisthus/git/commits/4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/Netflix/aegisthus/commits/4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+    "html_url": "https://github.com/Netflix/aegisthus/commit/4e2ceddf5ae91c62a86636a3fee329f0d008f0da",
+    "comments_url": "https://api.github.com/repos/Netflix/aegisthus/commits/4e2ceddf5ae91c62a86636a3fee329f0d008f0da/comments",
+    "author": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "danielbwatson",
+      "id": 1574249,
+      "node_id": "MDQ6VXNlcjE1NzQyNDk=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1574249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/danielbwatson",
+      "html_url": "https://github.com/danielbwatson",
+      "followers_url": "https://api.github.com/users/danielbwatson/followers",
+      "following_url": "https://api.github.com/users/danielbwatson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/danielbwatson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/danielbwatson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/danielbwatson/subscriptions",
+      "organizations_url": "https://api.github.com/users/danielbwatson/orgs",
+      "repos_url": "https://api.github.com/users/danielbwatson/repos",
+      "events_url": "https://api.github.com/users/danielbwatson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/danielbwatson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "02c7f047035e736e2681c8407a4aa8df1554b898",
+        "url": "https://api.github.com/repos/Netflix/aegisthus/commits/02c7f047035e736e2681c8407a4aa8df1554b898",
+        "html_url": "https://github.com/Netflix/aegisthus/commit/02c7f047035e736e2681c8407a4aa8df1554b898"
+      }
+    ]
+  }
+]
