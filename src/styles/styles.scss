@@ -1,0 +1,48 @@
+/*!
+ * Bootstrap v4.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/root';
+@import 'bootstrap/reboot';
+@import 'bootstrap/type';
+@import 'bootstrap/grid';
+@import 'bootstrap/utilities';
+@import 'bootstrap/dropdown';
+@import 'bootstrap/close';
+@import 'bootstrap/buttons';
+@import 'bootstrap/forms';
+@import 'bootstrap/button-group';
+@import 'bootstrap/input-group';
+@import 'bootstrap/custom-forms';
+@import 'bootstrap/navbar';
+@import 'bootstrap/pagination';
+
+// Not included;
+// @import 'bootstrap/code';
+// @import 'bootstrap/print';
+// @import 'bootstrap/images';
+// @import 'bootstrap/transitions';
+// @import 'bootstrap/list-group';
+// @import 'bootstrap/tables';
+// @import 'bootstrap/alert';
+// @import 'bootstrap/progress';
+// @import 'bootstrap/media';
+// @import 'bootstrap/nav';
+// @import 'bootstrap/badge';
+// @import 'bootstrap/jumbotron';
+// @import 'bootstrap/card';
+// @import 'bootstrap/breadcrumb';
+// @import 'bootstrap/modal';
+// @import 'bootstrap/popover';
+// @import 'bootstrap/carousel';
+// @import 'bootstrap/tooltip';
+
+@import '~ngx-toastr/toastr.css';
+@import 'project/base';
+@import 'project/bootstrap-overrides';
