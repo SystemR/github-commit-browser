@@ -1,6 +1,6 @@
-<div class="sub-header">
+<div class="sub-header" *ngIf="q">
   <div class="clearfix">
-    <h3 *ngIf="q" class="pt-1 pb-2 pull-left pointer" [routerLink]="['/']" [queryParams]="{ q: q }">
+    <h3 class="pull-left pointer" [routerLink]="['/']" [queryParams]="{ q: q }">
       Results for ({{ q }})
     </h3>
     <app-pagination
