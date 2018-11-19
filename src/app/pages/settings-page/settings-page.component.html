@@ -1,3 +1,30 @@
+<h3>Settings</h3>
 <p>
-  settings-page works!
+  Since Github has a low rate limit for unauthenticated API calls, you can specify a Github
+  application's Client ID and Client Secret to use here.
 </p>
+<p>
+  The Client ID and Secret are generally hidden on page and stored as base64 in your local storage
+  and hidden from view (unless they use dev tools).
+</p>
+<form #form="ngForm" (ngSubmit)="save()">
+  <div class="form-group">
+    <label for="clientId"> Client ID: </label>
+    <input type="text" class="form-control" name="clientId" [(ngModel)]="settings.clientId" />
+  </div>
+  <div class="form-group">
+    <label for="clientId"> Client Secret: </label>
+    <input
+      type="text"
+      class="form-control"
+      name="clientSecret"
+      [(ngModel)]="settings.clientSecret"
+    />
+  </div>
+  <div class="pull-right mb-5"><button type="submit" class="btn btn-primary">Save</button></div>
+</form>
+<hr class="cleared" />
+<div>
+  If you no longer need to authenticate API calls, click here to remove the client ID and Secret:
+  <a class="text-danger" (click)="clearSettings()">Remove Client ID and Client Secret</a>.
+</div>

@@ -6,7 +6,9 @@
     <h1 class="brand">
       <span routerLink="/" class="pointer"
         >Github Commit Browser
-        <span *ngIf="hasOAuth" title="Uses OAuth (Client ID & Secret)"
+        <span
+          *ngIf="settings?.clientId && settings?.clientSecret"
+          title="Uses OAuth (Client ID & Secret)"
           ><i class="fa fa-bolt"></i></span
       ></span>
     </h1>
