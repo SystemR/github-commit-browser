@@ -1,3 +1,52 @@
-<p>
-  user-page works!
-</p>
+<div *ngIf="isLoading">Loading...</div>
+<div class="row" *ngIf="!isLoading">
+  <div class="col-sm-4">
+    <div *ngIf="user" class="sidebar"><app-user-detail [user]="user"></app-user-detail></div>
+  </div>
+  <div class="col-sm-8">
+    <div *ngIf="repositories">
+      <div class="sub-header">
+        <div ngbDropdown class="pull-right" [placement]="'bottom-right'">
+          <button class="btn btn-outline-primary" ngbDropdownToggle>
+            Sort: <span *ngIf="sort === 'full_name'"> Alphabetical</span>
+            <span *ngIf="sort === 'forks_count'"> Forks</span>
+            <span *ngIf="sort === 'stargazers_count'"> Stars</span>
+          </button>
+          <div ngbDropdownMenu>
+            <button class="dropdown-item" (click)="setSort('full_name')">
+              <i class="fa fa-sort-alpha-asc"></i> Alphabetical
+            </button>
+            <button class="dropdown-item" (click)="setSort('forks_count')">
+              <i class="fa fa-code-fork"></i> Forks
+            </button>
+            <button class="dropdown-item" (click)="setSort('stargazers_count')">
+              <i class="fa fa-star"></i> Stars
+            </button>
+          </div>
+        </div>
+        <h3 class="mb-3">Repositories</h3>
+        <div class="input-group mb-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Filter (name, description)"
+            aria-label="Search"
+            [(ngModel)]="searchFilter"
+            (keyup)="filter()"
+          />
+          <div class="input-group-append">
+            <button (click)="filter()" class="btn btn-primary">Filter</button>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngFor="let repo of searchFilter ? filtered : repositories"
+        class="pointer"
+        [routerLink]="['/', user.login, repo.name]"
+      >
+        <app-repository-summary [repo]="repo"></app-repository-summary>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="error" class="text-danger">{{ error }}</div>

@@ -1,20 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { GithubUser } from 'src/lib/github/models/github-user';
 
-import { UserSummaryComponent } from './user-summary.component';
+import { UserDetailComponent } from './user-detail.component';
 
-describe('UserSummaryComponent', () => {
-  let component: UserSummaryComponent;
-  let fixture: ComponentFixture<UserSummaryComponent>;
+describe('UserDetailComponent', () => {
+  let component: UserDetailComponent;
+  let fixture: ComponentFixture<UserDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UserSummaryComponent]
+      declarations: [UserDetailComponent],
+      imports: [RouterTestingModule]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserSummaryComponent);
+    fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;
     component.user = new GithubUser();
     fixture.detectChanges();

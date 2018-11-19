@@ -37,6 +37,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.queryParams$ = this.route.queryParams.subscribe(params => {
       const q = params.q;
+      this.q = q;
       if (q) {
         const type = params.type;
         const page = params.page;
@@ -59,7 +60,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
           this.isLoading = true;
           query.get().then(
             (result: GithubListResponse<GithubUser>) => {
-              this.q = q;
               this.type = type;
               this.isLoading = false;
               this.pageCount = result.meta.pageCount;

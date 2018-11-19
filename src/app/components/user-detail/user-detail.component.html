@@ -1,0 +1,31 @@
+<img src="{{user.avatar_url}}" class="pull-left pointer mr-2" [routerLink]="['/', user.login]" />
+<h3 class="pointer" [routerLink]="['/', user.login]">{{ user.login }}</h3>
+<div *ngIf="user.name">{{ user.name }}</div>
+<p *ngIf="user.bio">
+  {{ user.bio }} <i class="fa fa-briefcase" *ngIf="user.hireable" title="Available for Hire"></i>
+</p>
+<div *ngIf="user.location">{{ user.location }}</div>
+<div *ngIf="user.blog" class="mb-2">
+  <a href="{{user.blog}}">{{ user.blog }}</a>
+</div>
+<div class="row mb-1">
+  <div class="col-6">
+    <div class="sub-title">Repos</div>
+    <div class="amount">{{ user.public_repos || 0 }}</div>
+  </div>
+  <div class="col-6">
+    <div class="sub-title">Gists</div>
+    <div class="amount">{{ user.public_gists || 0 }}</div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-6">
+    <div class="sub-title">Followers</div>
+    <div class="amount">{{ user.followers || 0 }}</div>
+  </div>
+  <div class="col-6">
+    <div class="sub-title">Following</div>
+    <div class="amount">{{ user.following || 0 }}</div>
+  </div>
+</div>
+<div class="mb-3">Member since {{ user.created_at | date: 'mediumDate' }}</div>
