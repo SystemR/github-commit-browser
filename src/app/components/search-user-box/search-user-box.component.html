@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="search()" autocomplete="off">
+  <div class="input-group">
+    <div class="input-group-prepend" ngbDropdown>
+      <button
+        type="button"
+        class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+        ngbDropdownToggle
+      >
+        <span *ngIf="type === 'all'">All </span> <span *ngIf="type === 'user'">User </span>
+        <span *ngIf="type === 'org'">Organization </span>
+      </button>
+      <div ngbDropdownMenu>
+        <a class="dropdown-item" (click)="setSearchType('all'); search()">All</a>
+        <a class="dropdown-item" (click)="setSearchType('user'); search()">User</a>
+        <a class="dropdown-item" (click)="setSearchType('org'); search()">Organization</a>
+      </div>
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Github (e.g. netflix, systemr)"
+      aria-label="Search"
+      name="keyword"
+      [(ngModel)]="keyword"
+    />
+    <div class="input-group-append">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</form>
