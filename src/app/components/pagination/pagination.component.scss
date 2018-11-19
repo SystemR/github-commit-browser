@@ -25,4 +25,12 @@
       border-left: 0;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    font-size: 0.8125rem;
+
+    li a {
+      min-width: 25px;
+    }
+  }
 }

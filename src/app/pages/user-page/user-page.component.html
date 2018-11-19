@@ -1,7 +1,7 @@
 <div *ngIf="isLoading">Loading...</div>
 <div class="row" *ngIf="!isLoading">
   <div class="col-sm-4">
-    <div *ngIf="user" class="sidebar"><app-user-detail [user]="user"></app-user-detail></div>
+    <div *ngIf="user" class="sidebar mb-3"><app-user-detail [user]="user"></app-user-detail></div>
   </div>
   <div class="col-sm-8">
     <div *ngIf="repositories">

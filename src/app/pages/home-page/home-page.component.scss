@@ -1,3 +1,9 @@
+.sub-header {
+  position: sticky;
+  top: 140px;
+  background: #fff;
+}
+
 .user-info {
   float: left;
   min-width: 130px;
@@ -9,5 +15,12 @@
 
   &:hover {
     background: #ccc;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  app-pagination {
+    clear: both;
+    float: left;
   }
 }

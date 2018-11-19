@@ -17,3 +17,26 @@
   padding: 25px 0 15px 0;
   z-index: 100;
 }
+
+.menu {
+  float: right;
+  padding-top: 5px;
+  .label {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .brand {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .menu {
+    padding-top: 1px;
+
+    .label {
+      display: none;
+    }
+  }
+}
