@@ -9,3 +9,7 @@
 - Search a user/organization
 - Github Integration
 - Github Data Modelling
+
+## Notes
+
+Based on the requirements I think the bulk of the work would be the integration with Github. Once the data models for Github and the services that do API calls are there, building the UI is trivial.
