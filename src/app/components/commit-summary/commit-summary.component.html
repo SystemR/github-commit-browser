@@ -1,0 +1,20 @@
+<div class="action">
+  <a class="btn btn-sm btn-outline-primary" href="{{commit.html_url}}" target="_blank"
+    ><i class="fa fa-external-link"></i
+  ></a>
+</div>
+<div class="author" *ngIf="commit.author">
+  <img src="{{commit.author.avatar_url}}" />
+  <a class="name" href="{{commit.author.html_url}}">{{ commit.author.login }}</a>
+</div>
+<div class="author" *ngIf="!commit.author && commit.commit.author && commit.commit.author.name">
+  <a class="name" href="mailto:{{commit.commit.author.email}}" *ngIf="commit.commit.author.email">{{
+    commit.commit.author.name
+  }}</a>
+  <span class="name" *ngIf="!commit.commit.author.email">{{ commit.commit.author.name }}</span>
+</div>
+<div class="msg" *ngIf="commit.commit.message">{{ commit.commit.message }}</div>
+<div class="time">{{ commit.commit.committer.date | date: 'long' }}</div>
+<div class="sha">
+  <a href="{{commit.html_url}}">{{ commit.sha }}</a>
+</div>

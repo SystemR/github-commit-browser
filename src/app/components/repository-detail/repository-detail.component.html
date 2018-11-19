@@ -1,0 +1,44 @@
+<h4>Repository</h4>
+<p class="lead mb-2">
+  <a href="{{repo.html_url}}">{{ repo.name }}</a>
+</p>
+<div class="mb-2">
+  {{ repo.description }} <i class="fa fa-code-fork" *ngIf="repo.forked" title="Forked"></i>
+</div>
+<div class="row mb-2">
+  <div class="col-sm-6">
+    <div><strong>Language</strong></div>
+    <div>{{ repo.language || 'Unknown' }}</div>
+  </div>
+  <div class="col-sm-6">
+    <div><strong>License</strong></div>
+    <div>{{ repo.license?.name || 'None' }}</div>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-sm-6">
+    <div><strong>Status</strong></div>
+    <div>{{ repo.archived ? 'Archived' : 'Active' }}</div>
+  </div>
+  <div class="col-sm-6" *ngIf="repo.homepage">
+    <div><strong>Homepage</strong></div>
+    <div><a href="{{repo.homepage}}">Link</a></div>
+  </div>
+</div>
+<div class="mb-2">
+  <div>Created at {{ repo.created_at | date: 'mediumDate' }}</div>
+</div>
+<div class="row mb-3">
+  <div class="col-sm-4">
+    <div class="sub-title"><i class="fa fa-code-fork"></i> Forks</div>
+    <div class="amount">{{ repo.forks_count || 0 }}</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="sub-title"><i class="fa fa-star"></i> Stars</div>
+    <div class="amount">{{ repo.stargazers_count || 0 }}</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="sub-title"><i class="fa fa-exclamation-circle"></i> Issues</div>
+    <div class="amount">{{ repo.open_issues_count || 0 }}</div>
+  </div>
+</div>

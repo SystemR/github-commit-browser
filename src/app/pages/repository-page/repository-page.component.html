@@ -1,3 +1,59 @@
-<p>
-  repository-page works!
-</p>
+<div *ngIf="isLoading">Loading...</div>
+<div class="row" *ngIf="!isLoading">
+  <div class="col-sm-4">
+    <div class="sidebar">
+      <div *ngIf="user" class="user-detail">
+        <div class="pull-left btn-back"><i class="fa fa-chevron-left "></i></div>
+        <img
+          src="{{user.avatar_url}}"
+          class="pull-left pointer mr-2"
+          [routerLink]="['/', user.login]"
+        />
+        <h3 class="pointer" [routerLink]="['/', user.login]">{{ user.login }}</h3>
+        <div *ngIf="user.name">{{ user.name }}</div>
+        <p *ngIf="user.bio">{{ user.bio }}</p>
+      </div>
+      <hr />
+      <div *ngIf="repo" class="repository-info">
+        <app-repository-detail [repo]="repo"></app-repository-detail>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div *ngIf="commits">
+      <div class="sub-header">
+        <h3 class="mb-2 pull-left pointer" [routerLink]="['/', user.login, repo.name]">
+          Recent Commits
+        </h3>
+        <app-pagination
+          *ngIf="commits && pageCount > 1"
+          [page]="currentPage"
+          [pageCount]="pageCount"
+          (pageChange)="onPageChange($event)"
+          class="pull-right mb-2"
+        ></app-pagination>
+        <div class="input-group mb-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Filter (author, commit msg, sha)"
+            aria-label="Search"
+            [(ngModel)]="searchFilter"
+            (keyup)="filter()"
+          />
+          <div class="input-group-append">
+            <button (click)="filter()" class="btn btn-primary">Filter</button>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngFor="let commit of searchFilter ? filtered : commits"
+        class="commit"
+        [routerLink]="['/', user.login, repo.name]"
+      >
+        <app-commit-summary [commit]="commit"></app-commit-summary>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="error">{{ error }}</div>

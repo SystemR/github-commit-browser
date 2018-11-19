@@ -35,6 +35,89 @@ export class GithubService {
   }
 
   /**
+   * Single Getters
+   */
+  getUser(login: string): Promise<GithubUser> {
+    if (this.usersCache[login]) {
+      return Promise.resolve(this.usersCache[login]);
+    }
+
+    return new Promise((res, rej) => {
+      const endpoint = `${this.usersApiUrl}${login}`;
+      let params = new HttpParams();
+      params = this.appendOAuth(params);
+      this.http
+        .get(endpoint, {
+          params,
+          headers: {
+            Accept: this.githubApiAcceptVersion
+          }
+        })
+        .subscribe(
+          (resp: GithubUser) => {
+            const user = new GithubUser();
+            Object.assign(user, resp);
+
+            if (user.onInstantiated) {
+              user.onInstantiated();
+            }
+
+            this.usersCache[login] = user;
+            res(user);
+          },
+          err => {
+            rej(err);
+          }
+        );
+    });
+  }
+
+  getRepository(user: GithubUser, repositoryName: string): Promise<GithubRepository> {
+    if (this.repositoriesCache[repositoryName]) {
+      const repo = this.repositoriesCache[repositoryName];
+      if (repo.owner.id === user.id) {
+        return Promise.resolve(repo);
+      }
+    } else if (this.userRepositoriesCache[user.id]) {
+      const repositories = this.userRepositoriesCache[user.id];
+      for (const repo of repositories) {
+        if (repo.name === repositoryName) {
+          return Promise.resolve(repo);
+        }
+      }
+    }
+
+    return new Promise((res, rej) => {
+      const endpoint = `${this.reposApiUrl}${user.login}/${repositoryName}`;
+      let params = new HttpParams();
+      params = this.appendOAuth(params);
+      this.http
+        .get(endpoint, {
+          params,
+          headers: {
+            Accept: this.githubApiAcceptVersion
+          }
+        })
+        .subscribe(
+          (resp: GithubRepository) => {
+            const repo = new GithubRepository();
+            Object.assign(repo, resp);
+
+            if (repo.onInstantiated) {
+              repo.onInstantiated();
+            }
+
+            this.repositoriesCache[repo.name] = repo;
+            res(repo);
+          },
+          err => {
+            rej(err);
+          }
+        );
+    });
+  }
+
+  /**
    * Builders
    */
   findUsers(keyword: string): GithubUserSearchQuery<GithubUser> {
@@ -87,7 +170,7 @@ export class GithubService {
 
   /**
    * Executors
-   * These do actual HTTP GET
+   * These do actual HTTP GET for the builders above
    */
   search(params: HttpParams): Promise<GithubListResponse<GithubUser>> {
     return new Promise((res, rej) => {
@@ -217,86 +300,6 @@ export class GithubService {
         .subscribe(
           (resp: HttpResponse<Object>) => {
             res(this.processGithubResponse(resp, GithubRetrieveType.commits, params));
-          },
-          err => {
-            rej(err);
-          }
-        );
-    });
-  }
-
-  getUser(login: string): Promise<GithubUser> {
-    if (this.usersCache[login]) {
-      return Promise.resolve(this.usersCache[login]);
-    }
-
-    return new Promise((res, rej) => {
-      const endpoint = `${this.usersApiUrl}${login}`;
-      let params = new HttpParams();
-      params = this.appendOAuth(params);
-      this.http
-        .get(endpoint, {
-          params,
-          headers: {
-            Accept: this.githubApiAcceptVersion
-          }
-        })
-        .subscribe(
-          (resp: GithubUser) => {
-            const user = new GithubUser();
-            Object.assign(user, resp);
-
-            if (user.onInstantiated) {
-              user.onInstantiated();
-            }
-
-            this.usersCache[login] = user;
-            res(user);
-          },
-          err => {
-            rej(err);
-          }
-        );
-    });
-  }
-
-  getRepository(user: GithubUser, repositoryName: string): Promise<GithubRepository> {
-    if (this.repositoriesCache[repositoryName]) {
-      const repo = this.repositoriesCache[repositoryName];
-      if (repo.owner.id === user.id) {
-        return Promise.resolve(repo);
-      }
-    } else if (this.userRepositoriesCache[user.id]) {
-      const repositories = this.userRepositoriesCache[user.id];
-      for (const repo of repositories) {
-        if (repo.name === repositoryName) {
-          return Promise.resolve(repo);
-        }
-      }
-    }
-
-    return new Promise((res, rej) => {
-      const endpoint = `${this.reposApiUrl}${user.login}/${repositoryName}`;
-      let params = new HttpParams();
-      params = this.appendOAuth(params);
-      this.http
-        .get(endpoint, {
-          params,
-          headers: {
-            Accept: this.githubApiAcceptVersion
-          }
-        })
-        .subscribe(
-          (resp: GithubRepository) => {
-            const repo = new GithubRepository();
-            Object.assign(repo, resp);
-
-            if (repo.onInstantiated) {
-              repo.onInstantiated();
-            }
-
-            this.repositoriesCache[repo.name] = repo;
-            res(repo);
           },
           err => {
             rej(err);

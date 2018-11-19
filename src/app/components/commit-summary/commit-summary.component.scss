@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  border: 1px solid #ccc;
+  background: #fefefe;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 5px 0;
+  position: relative;
+
+  &:hover {
+    .action {
+      display: block;
+    }
+  }
+}
+
+.author {
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  img {
+    border-radius: 16px;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    float: left;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+.msg {
+  clear: both;
+  font-size: 0.9375rem;
+  margin-bottom: 3px;
+}
+
+.sha,
+.time {
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.time {
+  float: right;
+}
+
+.action {
+  position: absolute;
+  display: none;
+  top: 3px;
+  right: 4px;
+  .btn {
+    padding: 0.1rem 0.4rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .time {
+    float: left;
+  }
+}

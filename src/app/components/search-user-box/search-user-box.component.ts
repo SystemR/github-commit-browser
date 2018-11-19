@@ -31,9 +31,7 @@ export class SearchUserBoxComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.params$) {
-      this.params$.unsubscribe();
-    }
+    this.params$.unsubscribe();
   }
 
   setSearchType(type: SearchType) {

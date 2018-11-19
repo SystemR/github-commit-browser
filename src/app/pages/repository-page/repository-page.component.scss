@@ -1,0 +1,37 @@
+.sidebar {
+  position: sticky;
+  top: 140px;
+}
+
+.sub-header {
+  position: sticky;
+  top: 140px;
+  padding-bottom: 5px;
+  background: #fff;
+  z-index: 100;
+}
+
+.btn-back {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-detail {
+  img {
+    border-radius: 32px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .sub-title {
+    font-weight: bold;
+    font-size: 0.8125rem;
+  }
+
+  .amount {
+    font-size: 1.2rem;
+  }
+}

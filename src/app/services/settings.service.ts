@@ -11,8 +11,8 @@ export class SettingsService {
   settings: AppSettings;
 
   constructor() {
-    const data = localStorage.getItem(APP_SETTINGS_LOCAL_STORAGE_KEY);
     this.settings = new AppSettings();
+    const data = localStorage.getItem(APP_SETTINGS_LOCAL_STORAGE_KEY);
     if (data) {
       try {
         const jsonSettings = JSON.parse(atob(data));

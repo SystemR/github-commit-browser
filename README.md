@@ -21,11 +21,12 @@ $ npm run test
 
 - Display commits of a repository
 - Display a list of repositories for a user/organization
-- Sort repository based on some attributes
-- Filter repository based on names or description
-- Search a user/organization
-- Github Integration
-- Github Data Modelling
+- Sort repository based on some attributes :white_check_mark:
+- Filter repository based on names or description :white_check_mark:
+- Search a user/organization :white_check_mark:
+- Github Integration :white_check_mark:
+- Github Data Modelling :white_check_mark:
+- Bookmarkable URL :white_check_mark:
 
 ## Notes
 

@@ -9,7 +9,9 @@ import { GithubService } from 'src/lib/github/services/github.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommitSummaryComponent } from './components/commit-summary/commit-summary.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { RepositoryDetailComponent } from './components/repository-detail/repository-detail.component';
 import { RepositorySummaryComponent } from './components/repository-summary/repository-summary.component';
 import { SearchUserBoxComponent } from './components/search-user-box/search-user-box.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
@@ -33,7 +35,9 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     PaginationComponent,
     UserSummaryComponent,
     UserDetailComponent,
-    RepositorySummaryComponent
+    RepositorySummaryComponent,
+    RepositoryDetailComponent,
+    CommitSummaryComponent
   ],
   imports: [
     BrowserModule,
