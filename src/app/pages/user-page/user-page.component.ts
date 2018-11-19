@@ -8,7 +8,7 @@ import { GithubRepository } from 'src/lib/github/models/github-repository';
 import { GithubUser } from 'src/lib/github/models/github-user';
 import { GithubService } from 'src/lib/github/services/github.service';
 
-enum SortType {
+export enum SortType {
   full_name = 'full_name',
   forks_count = 'forks_count',
   stargazers_count = 'stargazers_count'
