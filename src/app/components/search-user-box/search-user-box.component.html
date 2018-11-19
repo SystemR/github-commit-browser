@@ -10,9 +10,9 @@
         <span *ngIf="type === 'org'">Organization </span>
       </button>
       <div ngbDropdownMenu>
-        <a class="dropdown-item" (click)="setSearchType('all'); search()">All</a>
-        <a class="dropdown-item" (click)="setSearchType('user'); search()">User</a>
-        <a class="dropdown-item" (click)="setSearchType('org'); search()">Organization</a>
+        <a class="dropdown-item" (click)="setSearchType(searchType.all); search()">All</a>
+        <a class="dropdown-item" (click)="setSearchType(searchType.user); search()">User</a>
+        <a class="dropdown-item" (click)="setSearchType(searchType.org); search()">Organization</a>
       </div>
     </div>
     <input

@@ -10,6 +10,7 @@ import { SearchType } from '../../models/search-type';
   styleUrls: ['./search-user-box.component.scss']
 })
 export class SearchUserBoxComponent implements OnInit, OnDestroy {
+  searchType = SearchType;
   type = SearchType.all;
 
   params$: Subscription;
