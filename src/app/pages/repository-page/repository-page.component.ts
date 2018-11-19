@@ -52,6 +52,7 @@ export class RepositoryPageComponent extends FilterableComponent<GithubCommit>
         const repositoryName = param.repo;
         const page = queryParams.page;
         this.error = '';
+
         try {
           const user = await this.githubService.getUser(userLogin);
           this.user = user;
