@@ -26,12 +26,6 @@ describe('SettingsPageComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   beforeEach(inject(
     [GithubService, SettingsService],
     (_githubService_: GithubService, _settingsService_: SettingsService) => {
@@ -43,6 +37,12 @@ describe('SettingsPageComponent', () => {
       spyOn(githubService, 'setOAuth').and.callFake(() => {});
     }
   ));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SettingsPageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

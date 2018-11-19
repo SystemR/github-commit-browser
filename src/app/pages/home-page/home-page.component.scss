@@ -1,0 +1,13 @@
+.user-info {
+  float: left;
+  min-width: 130px;
+  width: 16.66%;
+  padding: 10px;
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #ccc;
+  }
+}

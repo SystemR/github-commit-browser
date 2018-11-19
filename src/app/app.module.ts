@@ -6,11 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { GithubService } from 'src/lib/github/services/github.service';
-import { GithubServiceMock } from 'src/lib/github/services/github.service.mock';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 import { SearchUserBoxComponent } from './components/search-user-box/search-user-box.component';
+import { UserSummaryComponent } from './components/user-summary/user-summary.component';
 import { CacheHttpInterceptor } from './interceptors/cache-http-interceptor';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RepositoryPageComponent } from './pages/repository-page/repository-page.component';
@@ -24,7 +25,9 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     RepositoryPageComponent,
     SettingsPageComponent,
     UserPageComponent,
-    SearchUserBoxComponent
+    SearchUserBoxComponent,
+    PaginationComponent,
+    UserSummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     },
     {
       provide: GithubService,
-      useClass: GithubServiceMock
+      useClass: GithubService
     }
   ],
   bootstrap: [AppComponent]

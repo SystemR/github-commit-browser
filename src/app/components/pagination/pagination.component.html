@@ -1,0 +1,15 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item action">
+      <a class="page-link" (click)="selectPage(page - 1)"> <i class="fa fa-chevron-left"></i> </a>
+    </li>
+    <li class="page-item disabled" *ngIf="isEllipsesLeftShown"><a class="page-link">...</a></li>
+    <li class="page-item pages" *ngFor="let ptr of pages" [class.active]="ptr === page">
+      <a class="page-link" (click)="selectPage(ptr)">{{ ptr }}</a>
+    </li>
+    <li class="page-item disabled" *ngIf="isEllipsesRightShown"><a class="page-link">...</a></li>
+    <li class="page-item action">
+      <a class="page-link" (click)="selectPage(page + 1)"> <i class="fa fa-chevron-right"></i> </a>
+    </li>
+  </ul>
+</nav>

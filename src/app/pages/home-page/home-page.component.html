@@ -1,3 +1,22 @@
-<p>
-  home-page works!
-</p>
+<app-pagination
+  *ngIf="users && pageCount > 1"
+  [page]="currentPage"
+  [pageCount]="pageCount"
+  (pageChange)="onPageChange($event)"
+  class="pull-right"
+></app-pagination>
+<h3 *ngIf="q" class="pt-1 mb-4">
+  Results <span class="d-none d-md-inline"> for ({{ q }})</span>
+</h3>
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="!isLoading">
+  <div *ngIf="users && users.length">
+    <div class="user-info" *ngFor="let user of users" [routerLink]="['/', user.login]">
+      <app-user-summary [user]="user"></app-user-summary>
+    </div>
+  </div>
+  <div *ngIf="users && !users.length">Unable to find users matching {{ q }}</div>
+</div>
+<div *ngIf="!isLoading && !users">
+  <p>Welcome to Github Commit Browser. Start by searching for the user/organization</p>
+</div>
