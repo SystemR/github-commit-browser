@@ -1,6 +1,6 @@
 # Github Commit Browser
 
-Github Commit Browser allows you to browse user's repositories and their commits. See Live Demo here: [https://rwenas.com/apps/github-commit-browser/](github-commit-browser/)
+Github Commit Browser allows you to browse user's repositories and their commits. See Live Demo here: [https://rwenas.com/apps/github-commit-browser/](https://rwenas.com/apps/github-commit-browser/)
 
 ## Setup
 
