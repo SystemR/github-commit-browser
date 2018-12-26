@@ -92,9 +92,9 @@ export class RepositoryPageComponent extends FilterableComponent<GithubCommit>
       const keyword = this.searchFilter.toLowerCase();
       this.filtered = this.commits.filter(dataRow => {
         if (
-          this.isMatch(dataRow['commit'], this.searchFilter) ||
-          this.isMatch(dataRow['author'], this.searchFilter) ||
-          this.isMatch(dataRow['sha'], this.searchFilter)
+          this.isMatch(dataRow['commit'], keyword) ||
+          this.isMatch(dataRow['author'], keyword) ||
+          this.isMatch(dataRow['sha'], keyword)
         ) {
           return true;
         }
